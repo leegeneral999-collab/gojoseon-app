@@ -1,0 +1,409 @@
+{
+ "mktcap": [
+  {
+   "date": "2026-05-26",
+   "cap": "146",
+   "basis": "조선 3사",
+   "source": "SK증권(2026-09-17)"
+  },
+  {
+   "date": "2026-07-31",
+   "cap": "95",
+   "basis": "조선 3사",
+   "source": "한국경제TV(2026-08-02)"
+  },
+  {
+   "date": "2026-09-16",
+   "cap": "89",
+   "basis": "조선 3사",
+   "source": "SK증권(2026-09-17)"
+  },
+  {
+   "date": "2026-09-30",
+   "cap": "110.3",
+   "basis": "조선 4사(지주사 포함)",
+   "source": "한국경제(2026-10-29)"
+  },
+  {
+   "date": "2026-10-29",
+   "cap": "74.3",
+   "basis": "조선 4사(지주사 포함)",
+   "source": "한국경제(2026-10-29)"
+  }
+ ],
+ "annual": [
+  {
+   "year": "2003",
+   "clarkson": "119",
+   "kr_orders": "",
+   "backlog_gt": "122",
+   "pb": "0.97",
+   "opm": "6.8",
+   "note": "P/B·OPM은 삼성증권 2024년 5월 자료"
+  },
+  {
+   "year": "2004",
+   "clarkson": "150",
+   "kr_orders": "",
+   "backlog_gt": "157",
+   "pb": "1.03",
+   "opm": "1.0",
+   "note": "P/B·OPM은 삼성증권 2024년 5월 자료"
+  },
+  {
+   "year": "2005",
+   "clarkson": "162",
+   "kr_orders": "1450",
+   "backlog_gt": "178",
+   "pb": "1.42",
+   "opm": "1.1",
+   "note": ""
+  },
+  {
+   "year": "2006",
+   "clarkson": "169",
+   "kr_orders": "",
+   "backlog_gt": "256",
+   "pb": "2.03",
+   "opm": "3.9",
+   "note": ""
+  },
+  {
+   "year": "2007",
+   "clarkson": "185",
+   "kr_orders": "3200",
+   "backlog_gt": "366",
+   "pb": "3.32",
+   "opm": "8.3",
+   "note": ""
+  },
+  {
+   "year": "2008",
+   "clarkson": "178",
+   "kr_orders": "1820",
+   "backlog_gt": "400",
+   "pb": "2.39",
+   "opm": "8.6",
+   "note": ""
+  },
+  {
+   "year": "2009",
+   "clarkson": "138",
+   "kr_orders": "481",
+   "backlog_gt": "340",
+   "pb": "1.44",
+   "opm": "5.9",
+   "note": ""
+  },
+  {
+   "year": "2010",
+   "clarkson": "142",
+   "kr_orders": "1177",
+   "backlog_gt": "317",
+   "pb": "1.42",
+   "opm": "11.9",
+   "note": ""
+  },
+  {
+   "year": "2011",
+   "clarkson": "139",
+   "kr_orders": "1355",
+   "backlog_gt": "259",
+   "pb": "1.48",
+   "opm": "9.4",
+   "note": ""
+  },
+  {
+   "year": "2012",
+   "clarkson": "126",
+   "kr_orders": "750",
+   "backlog_gt": "186",
+   "pb": "1.06",
+   "opm": "4.8",
+   "note": ""
+  },
+  {
+   "year": "2013",
+   "clarkson": "133",
+   "kr_orders": "1845",
+   "backlog_gt": "221",
+   "pb": "1.03",
+   "opm": "0.4",
+   "note": ""
+  },
+  {
+   "year": "2014",
+   "clarkson": "138",
+   "kr_orders": "",
+   "backlog_gt": "224",
+   "pb": "0.85",
+   "opm": "-4.7",
+   "note": ""
+  },
+  {
+   "year": "2015",
+   "clarkson": "131",
+   "kr_orders": "",
+   "backlog_gt": "224",
+   "pb": "0.59",
+   "opm": "-10.7",
+   "note": ""
+  },
+  {
+   "year": "2016",
+   "clarkson": "123",
+   "kr_orders": "178",
+   "backlog_gt": "169",
+   "pb": "0.61",
+   "opm": "-1.9",
+   "note": ""
+  },
+  {
+   "year": "2017",
+   "clarkson": "125",
+   "kr_orders": "",
+   "backlog_gt": "160",
+   "pb": "0.76",
+   "opm": "1.5",
+   "note": ""
+  },
+  {
+   "year": "2018",
+   "clarkson": "130",
+   "kr_orders": "1308",
+   "backlog_gt": "163",
+   "pb": "0.68",
+   "opm": "1.1",
+   "note": ""
+  },
+  {
+   "year": "2019",
+   "clarkson": "130",
+   "kr_orders": "943",
+   "backlog_gt": "149",
+   "pb": "0.74",
+   "opm": "0.4",
+   "note": ""
+  },
+  {
+   "year": "2020",
+   "clarkson": "126",
+   "kr_orders": "819",
+   "backlog_gt": "139",
+   "pb": "0.60",
+   "opm": "-2.8",
+   "note": ""
+  },
+  {
+   "year": "2021",
+   "clarkson": "154",
+   "kr_orders": "1744",
+   "backlog_gt": "181",
+   "pb": "0.91",
+   "opm": "-15.9",
+   "note": ""
+  },
+  {
+   "year": "2022",
+   "clarkson": "162",
+   "kr_orders": "1555",
+   "backlog_gt": "209",
+   "pb": "1.51",
+   "opm": "-10.7",
+   "note": "수주량은 점유율 37%×세계 발주 4204만CGT로 역산한 근사치"
+  },
+  {
+   "year": "2023",
+   "clarkson": "178",
+   "kr_orders": "1008",
+   "backlog_gt": "230",
+   "pb": "1.59",
+   "opm": "0.9",
+   "note": ""
+  },
+  {
+   "year": "2024",
+   "clarkson": "189",
+   "kr_orders": "1098",
+   "backlog_gt": "280",
+   "pb": "2.12",
+   "opm": "4.4",
+   "note": ""
+  },
+  {
+   "year": "2025",
+   "clarkson": "184.65",
+   "kr_orders": "1160",
+   "backlog_gt": "",
+   "pb": "3.70",
+   "opm": "12.0",
+   "note": "P/B는 2026년 2월 기준(미래에셋) / OPM은 3사 합산 영업이익 약 6조÷매출 약 50조 근사"
+  }
+ ],
+ "monthly": [
+  {
+   "month": "2026-01",
+   "clarkson": "184.29",
+   "global_month": "",
+   "kr_month": "",
+   "global_ytd": "",
+   "kr_ytd": "",
+   "ytd_months": "",
+   "backlog": "",
+   "kr_backlog": "",
+   "kr_share": "",
+   "pb": "",
+   "opm": "",
+   "note": ""
+  },
+  {
+   "month": "2026-03",
+   "clarkson": "182.14",
+   "global_month": "",
+   "kr_month": "",
+   "global_ytd": "",
+   "kr_ytd": "",
+   "ytd_months": "",
+   "backlog": "",
+   "kr_backlog": "",
+   "kr_share": "23",
+   "pb": "",
+   "opm": "",
+   "note": ""
+  },
+  {
+   "month": "2026-08",
+   "clarkson": "186.34",
+   "global_month": "",
+   "kr_month": "",
+   "global_ytd": "",
+   "kr_ytd": "",
+   "ytd_months": "",
+   "backlog": "",
+   "kr_backlog": "",
+   "kr_share": "7",
+   "pb": "",
+   "opm": "",
+   "note": ""
+  },
+  {
+   "month": "2026-09",
+   "clarkson": "186.59",
+   "global_month": "971",
+   "kr_month": "131",
+   "global_ytd": "7538",
+   "kr_ytd": "1098",
+   "ytd_months": "9",
+   "backlog": "22535",
+   "kr_backlog": "3820",
+   "kr_share": "13.5",
+   "pb": "2.93",
+   "opm": "15.1",
+   "note": "누적·잔량은 10월 발표치에서 역산"
+  },
+  {
+   "month": "2026-10",
+   "clarkson": "187.20",
+   "global_month": "431",
+   "kr_month": "93",
+   "global_ytd": "7969",
+   "kr_ytd": "1191",
+   "ytd_months": "10",
+   "backlog": "22950",
+   "kr_backlog": "3856",
+   "kr_share": "21.7",
+   "pb": "2.93",
+   "opm": "15.1",
+   "note": "P/B는 2026년 7월(LS증권 조선 4사) / OPM은 3사 1~9월 누적"
+  }
+ ],
+ "big3_q3": [
+  {
+   "company": "HD한국조선해양",
+   "q3_revenue": "82862",
+   "q3_op": "14472",
+   "q3_margin": "17.5",
+   "ytd_revenue": "253541",
+   "ytd_op": "44483",
+   "q4_consensus": "16408"
+  },
+  {
+   "company": "한화오션",
+   "q3_revenue": "34139",
+   "q3_op": "4857",
+   "q3_margin": "14.2",
+   "ytd_revenue": "120670",
+   "ytd_op": "16629",
+   "q4_consensus": "4267"
+  },
+  {
+   "company": "삼성중공업",
+   "q3_revenue": "31504",
+   "q3_op": "3384",
+   "q3_margin": "10.7",
+   "ytd_revenue": "92834",
+   "ytd_op": "9365",
+   "q4_consensus": "4170"
+  }
+ ],
+ "benchmarks": [
+  {
+   "id": "clarkson_peak",
+   "item": "2008년 신조선가지수 월간 고점",
+   "value": "191.58",
+   "when": "2008-09",
+   "source": "아시아경제(클락슨 기준)"
+  },
+  {
+   "id": "global_backlog_peak",
+   "item": "2008년 세계 수주잔량 고점(만CGT)",
+   "value": "22550",
+   "when": "2008-09",
+   "source": "Splash247·IndexBox(클락슨 수정치)"
+  },
+  {
+   "id": "prior_start",
+   "item": "이전 사이클 시작 연도",
+   "value": "2003",
+   "when": "",
+   "source": "신조선가지수 저점권"
+  },
+  {
+   "id": "prior_peak_year",
+   "item": "이전 사이클 고점 연도",
+   "value": "2008",
+   "when": "",
+   "source": "신조선가지수 고점 연도"
+  },
+  {
+   "id": "current_start",
+   "item": "이번 사이클 시작 연도",
+   "value": "2020",
+   "when": "",
+   "source": "2020년 12월 신조선가지수 125.6 저점"
+  }
+ ],
+ "mktshare": [
+  {
+   "date": "2007-06-26",
+   "ship_cap": "47.8",
+   "market_cap": "1014",
+   "basis": "조선 3사",
+   "note": "현대중공업 27.1조·삼성중공업 10.4조·대우조선해양 10.3조(2007-06-26 종가·한국일보/울산신문) / 시장 합산은 2007-07-04 코스피+코스닥 1014조(한국일보·8일 차이)"
+  },
+  {
+   "date": "2026-05-26",
+   "ship_cap": "146",
+   "market_cap": "7000",
+   "basis": "조선 3사",
+   "note": "HD현대중공업·한화오션·삼성중공업 고점(SK증권) / 시장 합산은 5월 11일 7000조 돌파(한국경제) 기준 근사"
+  },
+  {
+   "date": "2026-09-16",
+   "ship_cap": "89",
+   "market_cap": "6000",
+   "basis": "조선 3사",
+   "note": "조선 3사(SK증권) / 시장 합산은 6월 고점 대비 약 2000조 감소(한국경제 2026-09-14) 기준 근사"
+  }
+ ]
+}
