@@ -18,7 +18,7 @@ jobs:
       - name: build
         run: |
           set -o pipefail
-          gradle :app:assembleRelease --no-daemon --stacktrace 2>&1 | tee build.log || { grep -E "error|Error|What went wrong|FAILED|>" build.log | head -40 | while IFS= read -r l; do echo "::error::$l"; done; exit 1; }
+          gradle :app:assembleRelease --no-daemon --stacktrace 2>&1 | tee build.log || { grep -v "^> Task" build.log | tail -45 | while IFS= read -r l; do echo "::error::$l"; done; exit 1; }
       - run: cp app/build/outputs/apk/release/app-release.apk gojoseon.apk
       - uses: actions/upload-artifact@v4
         with:
