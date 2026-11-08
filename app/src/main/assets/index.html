@@ -96,6 +96,10 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}
 .sb dl { display: grid; grid-template-columns: max-content 1fr; gap: var(--cds-gap-xs) var(--cds-gap-md); font-size: var(--cds-font-size-caption); margin: var(--cds-gap-sm) 0 0; }
 .sb dt { font-weight: var(--cds-font-weight-medium); } .sb dd { margin: 0; color: var(--color-fg-muted); }
 .sb .phase { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: var(--cds-gap-md); }
+.sb .vsteps { display: grid; gap: var(--cds-gap-sm); grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); }
+.sb .vstep { display: grid; gap: 2px; padding: var(--cds-pad-sm) var(--cds-pad-md); border-radius: var(--cds-radius); border-left: 3px solid var(--color-ok); background: var(--color-bg, transparent); }
+.sb .vstep.done { border-left-color: var(--cds-chart-status-critical); }
+.sb .version { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); border: 1px solid var(--color-border-line); border-radius: 999px; padding: 1px 8px; vertical-align: middle; margin-left: 6px; font-family: var(--font-anthropic-sans); }
 [data-dash-source-state=empty] { color: transparent; }
 [data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
 .sb .fail { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: inherit; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
@@ -105,11 +109,22 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}
 
 <div class="sb">
   <header style="display:grid;gap:var(--cds-gap-sm)">
-    <h1 id="top">고조선</h1>
+    <h1 id="top">고조선 <span class="version">v1.3</span></h1>
     <p class="muted">조선업 사이클 추적 — 2008년 호황 vs 지금 · 기준월 <span data-draw="v" data-source="latest" data-field="month" data-fmt="text">—</span></p>
     <p class="lead">2008년 사이클 고점을 100으로 놓으면 이번 호황은 <b data-draw="v" data-source="cycle_score" data-field="score" data-fmt="int0">—</b>점입니다. 신조선가지수는 고점의 <b data-draw="v" data-source="position" data-field="ratio" data-where="id=price" data-fmt="pct01d">—</b>, 세계 수주잔량은 <b data-draw="v" data-source="position" data-field="ratio" data-where="id=backlog" data-fmt="pct01d">—</b>, 조선업 P/B는 <b data-draw="v" data-source="position" data-field="ratio" data-where="id=pb" data-fmt="pct01d">—</b>까지 왔지만, 한국 연간 수주량은 <b data-draw="v" data-source="position" data-field="ratio" data-where="id=orders" data-fmt="pct01d">—</b>에 그쳐 먼저 꺾였습니다.</p>
     <p class="muted">모든 수치는 클락슨리서치 월간 집계 보도, 증권사 리포트, 각사 공시에서 가져왔습니다. 투자 판단의 근거가 아니라 위치를 가늠하는 참고 지표입니다.</p>
   </header>
+
+  <section id="verdict" class="card" style="gap:var(--cds-gap-md)">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--cds-gap-sm) var(--cds-gap-lg)">
+      <h2 style="margin:0">종합평가</h2>
+      <span class="score" style="font-size:var(--cds-font-size-title)" data-draw="v" data-source="verdict" data-field="label" data-fmt="text">—</span>
+      <span class="muted">사이클 위치 점수 <b data-draw="v" data-source="verdict" data-field="score" data-fmt="int0">—</b>점 · 2008년의 <b data-draw="v" data-source="verdict" data-field="analog" data-fmt="text">—</b>와 닮은 구간</span>
+    </div>
+    <p class="lead" data-draw="v" data-source="verdict" data-field="sentence" data-fmt="text">—</p>
+    <div class="vsteps" data-draw="vsteps" data-source="verdict_steps"></div>
+    <p class="muted">판정 규칙: 수주량은 이번 사이클 정점의 90% 아래면, 신조선가지수는 이번 사이클 최고의 95% 아래면, 수주잔량은 전달보다 줄면 ‘정점 지남’으로 봅니다. 셋 중 ②·③이 꺾이면 고점 후, ②만 꺾이면 고점 통과 중, ①만 꺾이면 고점권, 아무것도 안 꺾였으면 고점 전입니다. 매달 데이터가 들어오면 다시 판정합니다.</p>
+  </section>
 
   <section id="position" class="hero">
     <div class="card">
@@ -617,6 +632,56 @@ dash.calc('cap_drawdown', {
     });
   },
 });
+dash.calc('verdict_steps', {
+  title: '종합평가 신호',
+  description: '2008년에 수주량 정점 → 선가 정점 → 수주잔량 정점 순서로 꺾인 것을 기준으로, 지금 각 신호가 정점을 지났는지 판정해 고점 전·고점권·고점 후를 정한 값',
+  inputs: ['monthly', 'annual', 'latest', 'order_peaks', 'cap_drawdown', 'cycle_score', 'split_now', 'benchmarks'],
+  fn: (monthly, annual, latest, order_peaks, cap_drawdown, cycle_score, split_now, benchmarks) => {
+    const L = latest[0], O = order_peaks[0];
+    const c0 = +benchmarks.find((r) => r.id === 'current_start').value;
+    const pts = annual.filter((r) => +r.year >= c0 && +r.clarkson > 0).map((r) => ({ when: r.year + '년 말', v: +r.clarkson }))
+      .concat(monthly.filter((r) => +r.clarkson > 0).sort((a, b) => (a.month < b.month ? -1 : 1)).map((r) => ({ when: r.month, v: +r.clarkson })));
+    const top = pts.reduce((a, p) => (p.v > a.v ? p : a));
+    const pr = L.clarkson / top.v;
+    const mrows = monthly.filter((r) => +r.clarkson > 0).sort((a, b) => (a.month < b.month ? -1 : 1));
+    const rising = mrows.length >= 2 && +mrows[mrows.length - 1].clarkson >= +mrows[mrows.length - 2].clarkson;
+    const price = pr >= 0.98 ? (rising ? '고점권·상승' : '고점권·횡보') : (pr >= 0.95 ? '고점 대비 소폭 하락' : '꺾임');
+    const priceDone = pr < 0.95;
+    const ordersDone = O.now_vs_cur_peak < 0.9;
+    const bl = monthly.filter((r) => +r.backlog > 0).sort((a, b) => (a.month < b.month ? -1 : 1));
+    const blUp = bl.length < 2 || +bl[bl.length - 1].backlog >= +bl[bl.length - 2].backlog;
+    const cap = cap_drawdown.find((r) => r.basis === '조선 3사') || cap_drawdown[0];
+    let label, analog;
+    if (priceDone && !blUp) { label = '고점 후'; analog = '2008년 하반기 이후'; }
+    else if (priceDone) { label = '고점 통과 중'; analog = '2008년 중반'; }
+    else if (ordersDone) { label = '고점권 (고점 직전)'; analog = '2007년 말~2008년 상반기'; }
+    else { label = '고점 전 (상승 중)'; analog = '2005~2007년'; }
+    const steps = [
+      { id: 'orders', step: '① 수주량', state: ordersDone ? '정점 지남' : '아직 증가', done: ordersDone, detail: '올해 연환산이 이번 사이클 정점(' + O.cur_year + '년)의 ' + Math.round(O.now_vs_cur_peak * 100) + '%' },
+      { id: 'price', step: '② 신조선가지수', state: price, done: priceDone, detail: L.clarkson.toFixed(2) + ' · 이번 사이클 최고(' + top.when + ' ' + top.v.toFixed(2) + ')의 ' + Math.round(pr * 100) + '%' },
+      { id: 'backlog', step: '③ 세계 수주잔량', state: blUp ? '아직 증가' : '감소 시작', done: !blUp, detail: '사상 최대권 ' + d3.format(',')(L.backlog) + '만CGT' },
+      { id: 'market', step: '시장(주가)', state: cap && cap.change < -0.2 ? '먼저 꺾임' : '고점권', done: cap && cap.change < -0.2, detail: cap ? '조선 3사 시총 고점 대비 ' + d3.format('+.0%')(cap.change) + ' · 시장 점수 ' + Math.round(split_now[0].market) : '' },
+    ];
+    return steps.map((x) => ({ ...x, label, analog, done: x.done ? 1 : 0, month: L.month }));
+  },
+});
+dash.calc('verdict', {
+  title: '종합평가',
+  description: '사이클 위치 점수와 신호별 정점 통과 여부를 묶은 한 줄 판단',
+  inputs: ['verdict_steps', 'cycle_score'],
+  fn: (steps, cycle_score) => {
+    const label = steps[0].label, analog = steps[0].analog;
+    const st = (id) => steps.find((x) => x.id === id);
+    const priceDone = !!st('price').done, blUp = !st('backlog').done, price = st('price').state;
+    const s = Math.round(cycle_score[0].score);
+    const od = !!st('orders').done, md = !!st('market').done;
+    const first = (od ? '수주량은 이미 정점을 지났고' : '수주량은 아직 늘고 있고') + (md ? ' 주가도 먼저 꺾였지만' : '') + ', ';
+    const pTxt = priceDone ? '신조선가지수는 고점에서 내려오고 있으며' : (price.indexOf('상승') >= 0 ? '신조선가지수는 고점권에서 아직 오르고 있고' : '신조선가지수는 고점권에서 멈춰 있고');
+    const bTxt = blUp ? '수주잔량도 아직 늘고 있어' : '수주잔량은 줄기 시작해';
+    const sentence = '사이클 위치 점수는 ' + s + '점입니다. 2008년에 꺾인 순서(① 수주량 → ② 신조선가지수 → ③ 수주잔량)로 보면, ' + first + pTxt + ' ' + bTxt + ' ‘' + label + '’으로 판단합니다. 2008년 사이클의 ' + analog + '에 해당합니다.';
+    return [{ month: steps[0].month, label, analog, sentence, score: s }];
+  },
+});
 dash.calc('big3_total', {
   title: '빅3 영업이익 합계',
   description: '3사의 3분기, 1~9월 누적, 4분기 컨센서스 영업이익 합(억원)과 1~9월 영업이익률',
@@ -695,6 +760,17 @@ dash.calc('big3_total', {
     const bases = Array.from(new Set(rows.map((r) => r.basis)));
     const series = bases.map((b, i) => ({ name: b.replace('(지주사 포함)', ''), color: dash.colors[i], points: rows.filter((r) => r.basis === b).map((r) => ({ x: new Date(r.date + 'T00:00:00Z'), y: +r.cap, note: r.source })) }));
     S.lineChart(el, { time: true, series, xFmt: d3.utcFormat('%-m월'), tipX: d3.utcFormat('%Y년 %-m월 %-d일'), yFmt: (v) => d3.format('.0f')(v), tipFmt: (v) => d3.format(',.1f')(v) + '조원', endLabels: true });
+  });
+  dash.draw('vsteps', (el) => {
+    const got = S.state(el, ['verdict_steps']); if (!got) return;
+    el.replaceChildren();
+    got[0].forEach((r) => {
+      const d = document.createElement('div'); d.className = 'vstep' + (r.done ? ' done' : '');
+      const a = document.createElement('span'); a.className = 'muted'; a.textContent = r.step;
+      const b = document.createElement('b'); b.textContent = r.state;
+      const c = document.createElement('span'); c.className = 'muted'; c.textContent = r.detail;
+      d.append(a, b, c); el.append(d);
+    });
   });
   dash.draw('shareCmp', (el) => {
     const got = S.state(el, ['mktshare']); if (!got) return;
