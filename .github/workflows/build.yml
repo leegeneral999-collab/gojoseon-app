@@ -2,6 +2,8 @@ name: build-apk
 on:
   push:
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-24.04
@@ -24,3 +26,9 @@ jobs:
         with:
           name: gojoseon-apk
           path: gojoseon.apk
+      - name: publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="v1.0.${{ github.run_number }}"
+          gh release create "$TAG" gojoseon.apk --title "고조선 $TAG" --notes "고조선 앱 APK (${{ github.sha }})" --repo "${{ github.repository }}"
