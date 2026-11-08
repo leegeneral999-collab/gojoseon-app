@@ -16,7 +16,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}
 </script>
 <script>
 (function(){
-  const DATA = {"annual": [{"year": "2003", "clarkson": "119", "kr_orders": "", "backlog_gt": "122", "pb": "0.97", "opm": "6.8", "note": "P/B·OPM은 삼성증권 2024년 5월 자료"}, {"year": "2004", "clarkson": "150", "kr_orders": "", "backlog_gt": "157", "pb": "1.03", "opm": "1.0", "note": "P/B·OPM은 삼성증권 2024년 5월 자료"}, {"year": "2005", "clarkson": "162", "kr_orders": "1450", "backlog_gt": "178", "pb": "1.42", "opm": "1.1", "note": ""}, {"year": "2006", "clarkson": "169", "kr_orders": "", "backlog_gt": "256", "pb": "2.03", "opm": "3.9", "note": ""}, {"year": "2007", "clarkson": "185", "kr_orders": "3200", "backlog_gt": "366", "pb": "3.32", "opm": "8.3", "note": ""}, {"year": "2008", "clarkson": "178", "kr_orders": "1820", "backlog_gt": "400", "pb": "2.39", "opm": "8.6", "note": ""}, {"year": "2009", "clarkson": "138", "kr_orders": "481", "backlog_gt": "340", "pb": "1.44", "opm": "5.9", "note": ""}, {"year": "2010", "clarkson": "142", "kr_orders": "1177", "backlog_gt": "317", "pb": "1.42", "opm": "11.9", "note": ""}, {"year": "2011", "clarkson": "139", "kr_orders": "1355", "backlog_gt": "259", "pb": "1.48", "opm": "9.4", "note": ""}, {"year": "2012", "clarkson": "126", "kr_orders": "750", "backlog_gt": "186", "pb": "1.06", "opm": "4.8", "note": ""}, {"year": "2013", "clarkson": "133", "kr_orders": "1845", "backlog_gt": "221", "pb": "1.03", "opm": "0.4", "note": ""}, {"year": "2014", "clarkson": "138", "kr_orders": "", "backlog_gt": "224", "pb": "0.85", "opm": "-4.7", "note": ""}, {"year": "2015", "clarkson": "131", "kr_orders": "", "backlog_gt": "224", "pb": "0.59", "opm": "-10.7", "note": ""}, {"year": "2016", "clarkson": "123", "kr_orders": "178", "backlog_gt": "169", "pb": "0.61", "opm": "-1.9", "note": ""}, {"year": "2017", "clarkson": "125", "kr_orders": "", "backlog_gt": "160", "pb": "0.76", "opm": "1.5", "note": ""}, {"year": "2018", "clarkson": "130", "kr_orders": "1308", "backlog_gt": "163", "pb": "0.68", "opm": "1.1", "note": ""}, {"year": "2019", "clarkson": "130", "kr_orders": "943", "backlog_gt": "149", "pb": "0.74", "opm": "0.4", "note": ""}, {"year": "2020", "clarkson": "126", "kr_orders": "819", "backlog_gt": "139", "pb": "0.60", "opm": "-2.8", "note": ""}, {"year": "2021", "clarkson": "154", "kr_orders": "1744", "backlog_gt": "181", "pb": "0.91", "opm": "-15.9", "note": ""}, {"year": "2022", "clarkson": "162", "kr_orders": "1555", "backlog_gt": "209", "pb": "1.51", "opm": "-10.7", "note": "수주량은 점유율 37%×세계 발주 4204만CGT로 역산한 근사치"}, {"year": "2023", "clarkson": "178", "kr_orders": "1008", "backlog_gt": "230", "pb": "1.59", "opm": "0.9", "note": ""}, {"year": "2024", "clarkson": "189", "kr_orders": "1098", "backlog_gt": "280", "pb": "2.12", "opm": "4.4", "note": ""}, {"year": "2025", "clarkson": "184.65", "kr_orders": "1160", "backlog_gt": "", "pb": "3.70", "opm": "12.0", "note": "P/B는 2026년 2월 기준(미래에셋) / OPM은 3사 합산 영업이익 약 6조÷매출 약 50조 근사"}], "monthly": [{"month": "2026-01", "clarkson": "184.29", "global_month": "", "kr_month": "", "global_ytd": "", "kr_ytd": "", "ytd_months": "", "backlog": "", "kr_backlog": "", "kr_share": "", "pb": "", "opm": "", "note": ""}, {"month": "2026-03", "clarkson": "182.14", "global_month": "", "kr_month": "", "global_ytd": "", "kr_ytd": "", "ytd_months": "", "backlog": "", "kr_backlog": "", "kr_share": "23", "pb": "", "opm": "", "note": ""}, {"month": "2026-08", "clarkson": "186.34", "global_month": "", "kr_month": "", "global_ytd": "", "kr_ytd": "", "ytd_months": "", "backlog": "", "kr_backlog": "", "kr_share": "7", "pb": "", "opm": "", "note": ""}, {"month": "2026-09", "clarkson": "186.59", "global_month": "971", "kr_month": "131", "global_ytd": "7538", "kr_ytd": "1098", "ytd_months": "9", "backlog": "22535", "kr_backlog": "3820", "kr_share": "13.5", "pb": "2.93", "opm": "15.1", "note": "누적·잔량은 10월 발표치에서 역산"}, {"month": "2026-10", "clarkson": "187.20", "global_month": "431", "kr_month": "93", "global_ytd": "7969", "kr_ytd": "1191", "ytd_months": "10", "backlog": "22950", "kr_backlog": "3856", "kr_share": "21.7", "pb": "2.93", "opm": "15.1", "note": "P/B는 2026년 7월(LS증권 조선 4사) / OPM은 3사 1~9월 누적"}], "big3_q3": [{"company": "HD한국조선해양", "q3_revenue": "82862", "q3_op": "14472", "q3_margin": "17.5", "ytd_revenue": "253541", "ytd_op": "44483", "q4_consensus": "16408"}, {"company": "한화오션", "q3_revenue": "34139", "q3_op": "4857", "q3_margin": "14.2", "ytd_revenue": "120670", "ytd_op": "16629", "q4_consensus": "4267"}, {"company": "삼성중공업", "q3_revenue": "31504", "q3_op": "3384", "q3_margin": "10.7", "ytd_revenue": "92834", "ytd_op": "9365", "q4_consensus": "4170"}], "benchmarks": [{"id": "clarkson_peak", "item": "2008년 신조선가지수 월간 고점", "value": "191.58", "when": "2008-09", "source": "아시아경제(클락슨 기준)"}, {"id": "global_backlog_peak", "item": "2008년 세계 수주잔량 고점(만CGT)", "value": "22550", "when": "2008-09", "source": "Splash247·IndexBox(클락슨 수정치)"}, {"id": "prior_start", "item": "이전 사이클 시작 연도", "value": "2003", "when": "", "source": "신조선가지수 저점권"}, {"id": "prior_peak_year", "item": "이전 사이클 고점 연도", "value": "2008", "when": "", "source": "신조선가지수 고점 연도"}, {"id": "current_start", "item": "이번 사이클 시작 연도", "value": "2020", "when": "", "source": "2020년 12월 신조선가지수 125.6 저점"}]};
+  const DATA = {"mktcap": [{"date": "2026-05-26", "cap": "146", "basis": "조선 3사", "source": "SK증권(2026-09-17)"}, {"date": "2026-07-31", "cap": "95", "basis": "조선 3사", "source": "한국경제TV(2026-08-02)"}, {"date": "2026-09-16", "cap": "89", "basis": "조선 3사", "source": "SK증권(2026-09-17)"}, {"date": "2026-09-30", "cap": "110.3", "basis": "조선 4사(지주사 포함)", "source": "한국경제(2026-10-29)"}, {"date": "2026-10-29", "cap": "74.3", "basis": "조선 4사(지주사 포함)", "source": "한국경제(2026-10-29)"}], "annual": [{"year": "2003", "clarkson": "119", "kr_orders": "", "backlog_gt": "122", "pb": "0.97", "opm": "6.8", "note": "P/B·OPM은 삼성증권 2024년 5월 자료"}, {"year": "2004", "clarkson": "150", "kr_orders": "", "backlog_gt": "157", "pb": "1.03", "opm": "1.0", "note": "P/B·OPM은 삼성증권 2024년 5월 자료"}, {"year": "2005", "clarkson": "162", "kr_orders": "1450", "backlog_gt": "178", "pb": "1.42", "opm": "1.1", "note": ""}, {"year": "2006", "clarkson": "169", "kr_orders": "", "backlog_gt": "256", "pb": "2.03", "opm": "3.9", "note": ""}, {"year": "2007", "clarkson": "185", "kr_orders": "3200", "backlog_gt": "366", "pb": "3.32", "opm": "8.3", "note": ""}, {"year": "2008", "clarkson": "178", "kr_orders": "1820", "backlog_gt": "400", "pb": "2.39", "opm": "8.6", "note": ""}, {"year": "2009", "clarkson": "138", "kr_orders": "481", "backlog_gt": "340", "pb": "1.44", "opm": "5.9", "note": ""}, {"year": "2010", "clarkson": "142", "kr_orders": "1177", "backlog_gt": "317", "pb": "1.42", "opm": "11.9", "note": ""}, {"year": "2011", "clarkson": "139", "kr_orders": "1355", "backlog_gt": "259", "pb": "1.48", "opm": "9.4", "note": ""}, {"year": "2012", "clarkson": "126", "kr_orders": "750", "backlog_gt": "186", "pb": "1.06", "opm": "4.8", "note": ""}, {"year": "2013", "clarkson": "133", "kr_orders": "1845", "backlog_gt": "221", "pb": "1.03", "opm": "0.4", "note": ""}, {"year": "2014", "clarkson": "138", "kr_orders": "", "backlog_gt": "224", "pb": "0.85", "opm": "-4.7", "note": ""}, {"year": "2015", "clarkson": "131", "kr_orders": "", "backlog_gt": "224", "pb": "0.59", "opm": "-10.7", "note": ""}, {"year": "2016", "clarkson": "123", "kr_orders": "178", "backlog_gt": "169", "pb": "0.61", "opm": "-1.9", "note": ""}, {"year": "2017", "clarkson": "125", "kr_orders": "", "backlog_gt": "160", "pb": "0.76", "opm": "1.5", "note": ""}, {"year": "2018", "clarkson": "130", "kr_orders": "1308", "backlog_gt": "163", "pb": "0.68", "opm": "1.1", "note": ""}, {"year": "2019", "clarkson": "130", "kr_orders": "943", "backlog_gt": "149", "pb": "0.74", "opm": "0.4", "note": ""}, {"year": "2020", "clarkson": "126", "kr_orders": "819", "backlog_gt": "139", "pb": "0.60", "opm": "-2.8", "note": ""}, {"year": "2021", "clarkson": "154", "kr_orders": "1744", "backlog_gt": "181", "pb": "0.91", "opm": "-15.9", "note": ""}, {"year": "2022", "clarkson": "162", "kr_orders": "1555", "backlog_gt": "209", "pb": "1.51", "opm": "-10.7", "note": "수주량은 점유율 37%×세계 발주 4204만CGT로 역산한 근사치"}, {"year": "2023", "clarkson": "178", "kr_orders": "1008", "backlog_gt": "230", "pb": "1.59", "opm": "0.9", "note": ""}, {"year": "2024", "clarkson": "189", "kr_orders": "1098", "backlog_gt": "280", "pb": "2.12", "opm": "4.4", "note": ""}, {"year": "2025", "clarkson": "184.65", "kr_orders": "1160", "backlog_gt": "", "pb": "3.70", "opm": "12.0", "note": "P/B는 2026년 2월 기준(미래에셋) / OPM은 3사 합산 영업이익 약 6조÷매출 약 50조 근사"}], "monthly": [{"month": "2026-01", "clarkson": "184.29", "global_month": "", "kr_month": "", "global_ytd": "", "kr_ytd": "", "ytd_months": "", "backlog": "", "kr_backlog": "", "kr_share": "", "pb": "", "opm": "", "note": ""}, {"month": "2026-03", "clarkson": "182.14", "global_month": "", "kr_month": "", "global_ytd": "", "kr_ytd": "", "ytd_months": "", "backlog": "", "kr_backlog": "", "kr_share": "23", "pb": "", "opm": "", "note": ""}, {"month": "2026-08", "clarkson": "186.34", "global_month": "", "kr_month": "", "global_ytd": "", "kr_ytd": "", "ytd_months": "", "backlog": "", "kr_backlog": "", "kr_share": "7", "pb": "", "opm": "", "note": ""}, {"month": "2026-09", "clarkson": "186.59", "global_month": "971", "kr_month": "131", "global_ytd": "7538", "kr_ytd": "1098", "ytd_months": "9", "backlog": "22535", "kr_backlog": "3820", "kr_share": "13.5", "pb": "2.93", "opm": "15.1", "note": "누적·잔량은 10월 발표치에서 역산"}, {"month": "2026-10", "clarkson": "187.20", "global_month": "431", "kr_month": "93", "global_ytd": "7969", "kr_ytd": "1191", "ytd_months": "10", "backlog": "22950", "kr_backlog": "3856", "kr_share": "21.7", "pb": "2.93", "opm": "15.1", "note": "P/B는 2026년 7월(LS증권 조선 4사) / OPM은 3사 1~9월 누적"}], "big3_q3": [{"company": "HD한국조선해양", "q3_revenue": "82862", "q3_op": "14472", "q3_margin": "17.5", "ytd_revenue": "253541", "ytd_op": "44483", "q4_consensus": "16408"}, {"company": "한화오션", "q3_revenue": "34139", "q3_op": "4857", "q3_margin": "14.2", "ytd_revenue": "120670", "ytd_op": "16629", "q4_consensus": "4267"}, {"company": "삼성중공업", "q3_revenue": "31504", "q3_op": "3384", "q3_margin": "10.7", "ytd_revenue": "92834", "ytd_op": "9365", "q4_consensus": "4170"}], "benchmarks": [{"id": "clarkson_peak", "item": "2008년 신조선가지수 월간 고점", "value": "191.58", "when": "2008-09", "source": "아시아경제(클락슨 기준)"}, {"id": "global_backlog_peak", "item": "2008년 세계 수주잔량 고점(만CGT)", "value": "22550", "when": "2008-09", "source": "Splash247·IndexBox(클락슨 수정치)"}, {"id": "prior_start", "item": "이전 사이클 시작 연도", "value": "2003", "when": "", "source": "신조선가지수 저점권"}, {"id": "prior_peak_year", "item": "이전 사이클 고점 연도", "value": "2008", "when": "", "source": "신조선가지수 고점 연도"}, {"id": "current_start", "item": "이번 사이클 시작 연도", "value": "2020", "when": "", "source": "2020년 12월 신조선가지수 125.6 저점"}]};
   const calcs = {}, cache = {}, draws = {};
   const colors = ['#2f6fd6','#d9822b','#3a9c6d','#8e5bd0','#c44e6a','#5aa5b8','#b8a23a','#7a7a7a'];
   function get(id){
@@ -115,6 +115,27 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}
       <p class="muted">세로선이 2008년 고점입니다. 막대에 마우스를 올리면 지금 값과 고점 값이 나옵니다.</p>
       <div class="pos-head"><span></span><div class="scale"><span style="left:0%">0</span><span style="left:66.67%">100%</span><span style="left:100%">150%</span></div><span></span></div>
       <div class="pos" data-draw="posbars" data-source="position"></div>
+    </div>
+  </section>
+
+  <section id="split" class="hero">
+    <div class="card">
+      <h2>실물 vs 시장 — 주가는 따라오고 있나</h2>
+      <p class="muted">실물 점수 = 신조선가지수·세계 수주잔량·한국 수주량·영업이익률, 시장 점수 = 조선업 P/B. 둘 다 2008년 사이클 고점 = 100. 차이가 마이너스면 주가가 실물보다 뒤처진 상태입니다.</p>
+      <div class="tiles">
+        <div class="tile"><span class="muted">실물 점수</span><span class="num" data-draw="v" data-source="split_now" data-field="real" data-fmt="int0">—</span></div>
+        <div class="tile"><span class="muted">시장 점수</span><span class="num" data-draw="v" data-source="split_now" data-field="market" data-fmt="int0">—</span></div>
+        <div class="tile"><span class="muted">차이 (시장 − 실물)</span><span class="num" data-draw="v" data-source="split_now" data-field="gap" data-fmt="signed0" data-tone="1">—</span></div>
+      </div>
+      <p class="lead">2025년에는 시장 점수가 실물보다 <b data-draw="v" data-source="split_history" data-field="gap" data-where="period=2025" data-fmt="signed0">—</b>점 앞서 있었지만, 지금은 <b data-draw="v" data-source="split_now" data-field="gap" data-fmt="signed0">—</b>점으로 뒤집혔습니다. P/B는 가장 최근 보도치라 그 뒤의 주가 움직임은 늦게 반영됩니다.</p>
+      <div class="chart tall" data-draw="splitHist" data-source="split_history"></div>
+    </div>
+    <div class="card">
+      <h3>조선주 합산 시가총액</h3>
+      <p class="muted">보도로 확인된 시점만 · 3사와 4사(지주사 포함)는 기준이 달라 따로 표시 · 단위 조원</p>
+      <p class="muted">조선 3사: 최고 <b data-draw="v" data-source="cap_drawdown" data-field="peak" data-where="basis=조선 3사" data-fmt="tril">—</b>(<span data-draw="v" data-source="cap_drawdown" data-field="peak_date" data-where="basis=조선 3사" data-fmt="text">—</span>) → <b data-draw="v" data-source="cap_drawdown" data-field="last" data-where="basis=조선 3사" data-fmt="tril">—</b>(<span data-draw="v" data-source="cap_drawdown" data-field="last_date" data-where="basis=조선 3사" data-fmt="text">—</span>), <b data-draw="v" data-source="cap_drawdown" data-field="change" data-where="basis=조선 3사" data-fmt="signedpct01" data-tone="1">—</b></p>
+      <p class="muted">조선 4사: <span data-draw="v" data-source="cap_drawdown" data-field="peak_date" data-where="basis=조선 4사(지주사 포함)" data-fmt="text">—</span> 대비 <span data-draw="v" data-source="cap_drawdown" data-field="last_date" data-where="basis=조선 4사(지주사 포함)" data-fmt="text">—</span> <b data-draw="v" data-source="cap_drawdown" data-field="change" data-where="basis=조선 4사(지주사 포함)" data-fmt="signedpct01" data-tone="1">—</b></p>
+      <div class="chart" data-draw="capChart" data-source="mktcap"></div>
     </div>
   </section>
 
@@ -252,6 +273,8 @@ window.SB = (() => {
     signedpct01: (v) => d3.format('+.1%')(v),
     year: (v) => v + '년',
     text: (v) => String(v),
+    signed0: (v) => d3.format('+.0f')(v),
+    tril: (v) => d3.format(',.1f')(v).replace(/\.0$/, '') + '조원',
   };
   const unitFmt = (v, u) => u === 'pt' ? d3.format('.2f')(v) : u === '배' ? d3.format('.2f')(v) + '배' : u === '%' ? d3.format('.1f')(v) + '%' : u === '년' ? v + '년' : nf.format(v) + u;
   const rowFor = (rows, el) => {
@@ -504,6 +527,60 @@ dash.calc('order_peaks', {
     return [{ prior_year: p.year, cur_year: c.year, now_vs_cur_peak: now.orders / c.orders }];
   },
 });
+dash.calc('split_now', {
+  title: '실물 점수와 시장 점수',
+  description: '실물 = 신조선가지수·세계 수주잔량·한국 수주량·영업이익률의 2008년 고점 대비 비율 평균, 시장 = 조선업 P/B의 2007년 고점 대비 비율 (각 0~150%, ×100)',
+  inputs: ['position'],
+  fn: (position) => {
+    const c = (x) => Math.max(0, Math.min(x, 1.5));
+    const real = position.filter((r) => ['price', 'backlog', 'orders', 'opm'].includes(r.id));
+    const mk = position.filter((r) => r.id === 'pb');
+    const rs = real.reduce((t, r) => t + c(r.ratio), 0) / real.length * 100;
+    const ms = mk.length ? mk.reduce((t, r) => t + c(r.ratio), 0) / mk.length * 100 : null;
+    return [{ real: rs, market: ms, gap: ms == null ? null : ms - rs }];
+  },
+});
+dash.calc('split_history', {
+  title: '실물·시장 점수 추이',
+  description: '연도별(연간 자료)과 2026년 이후 월별(월간 자료)로 다시 계산한 실물 점수와 시장 점수',
+  inputs: ['annual', 'monthly', 'peaks'],
+  fn: (annual, monthly, peaks) => {
+    const P = peaks[0];
+    const c = (x) => Math.max(0, Math.min(x, 1.5));
+    const avg = (v) => (v.length ? v.reduce((t, x) => t + c(x), 0) / v.length * 100 : null);
+    const ok = (v) => v != null && v !== '';
+    const out = [];
+    annual.forEach((r) => {
+      const v = [];
+      if (+r.clarkson > 0) v.push(+r.clarkson / P.clarkson);
+      if (+r.kr_orders > 0) v.push(+r.kr_orders / P.kr_orders);
+      if (+r.backlog_gt > 0) v.push(+r.backlog_gt / P.backlog_gt);
+      if (ok(r.opm)) v.push(+r.opm / P.opm);
+      out.push({ period: String(r.year), x: +r.year + 0.5, real: avg(v), market: +r.pb > 0 ? avg([+r.pb / P.pb]) : null, kind: '연도별' });
+    });
+    monthly.filter((r) => +r.kr_ytd > 0 && +r.backlog > 0).forEach((r) => {
+      const v = [+r.clarkson / P.clarkson, (+r.kr_ytd * 12 / +r.ytd_months) / P.kr_orders, +r.backlog / P.backlog_cgt];
+      if (ok(r.opm)) v.push(+r.opm / P.opm);
+      const [y, m] = r.month.split('-').map(Number);
+      out.push({ period: r.month, x: y + (m - 0.5) / 12, real: avg(v), market: +r.pb > 0 ? avg([+r.pb / P.pb]) : null, kind: '월별' });
+    });
+    return out.map((r) => ({ ...r, gap: r.real != null && r.market != null ? r.market - r.real : null }));
+  },
+});
+dash.calc('cap_drawdown', {
+  title: '조선주 시가총액 고점 대비',
+  description: '같은 기준(3사 또는 4사)끼리 가장 최근 시가총액을 그 기준의 이번 사이클 최고치와 비교한 변화율',
+  inputs: ['mktcap'],
+  fn: (mktcap) => {
+    const bases = Array.from(new Set(mktcap.map((r) => r.basis)));
+    return bases.map((b) => {
+      const rows = mktcap.filter((r) => r.basis === b).sort((x, y) => (x.date < y.date ? -1 : 1));
+      const top = rows.reduce((a, r) => (+r.cap > +a.cap ? r : a));
+      const last = rows[rows.length - 1];
+      return { basis: b, peak: +top.cap, peak_date: top.date, last: +last.cap, last_date: last.date, change: +last.cap / +top.cap - 1 };
+    });
+  },
+});
 dash.calc('big3_total', {
   title: '빅3 영업이익 합계',
   description: '3사의 3분기, 1~9월 누적, 4분기 컨센서스 영업이익 합(억원)과 1~9월 영업이익률',
@@ -570,6 +647,19 @@ dash.calc('big3_total', {
     el.append(tip);
   });
 
+  dash.draw('splitHist', (el) => {
+    const got = S.state(el, ['split_history']); if (!got) return;
+    const rows = got[0];
+    const ser = (f, color, name) => ({ name, color, points: rows.filter((r) => r[f] != null).map((r) => ({ x: r.x, y: r[f], note: r.period + (r.kind === '월별' ? '월' : '년') })) });
+    S.lineChart(el, { height: 260, series: [ser('real', dash.colors[0], '실물'), ser('market', dash.colors[1], '시장(P/B)')], xFmt: (v) => "'" + String(Math.floor(v)).slice(2), tipX: () => '점수 (2008년 고점 = 100)', yFmt: (v) => d3.format('.0f')(v), tipFmt: (v) => d3.format('.0f')(v) + '점', refs: [{ y: 100, label: '2008년 고점 = 100' }], endLabels: true });
+  });
+  dash.draw('capChart', (el) => {
+    const got = S.state(el, ['mktcap']); if (!got) return;
+    const rows = got[0];
+    const bases = Array.from(new Set(rows.map((r) => r.basis)));
+    const series = bases.map((b, i) => ({ name: b.replace('(지주사 포함)', ''), color: dash.colors[i], points: rows.filter((r) => r.basis === b).map((r) => ({ x: new Date(r.date + 'T00:00:00Z'), y: +r.cap, note: r.source })) }));
+    S.lineChart(el, { time: true, series, xFmt: d3.utcFormat('%-m월'), tipX: d3.utcFormat('%Y년 %-m월 %-d일'), yFmt: (v) => d3.format('.0f')(v), tipFmt: (v) => d3.format(',.1f')(v) + '조원', endLabels: true });
+  });
   dash.draw('scoreHist', (el) => {
     const got = S.state(el, ['score_history']); if (!got) return;
     const rows = got[0];
